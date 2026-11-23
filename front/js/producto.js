@@ -1,7 +1,6 @@
 // ==========================================
 // DETALLE DE UN PRODUCTO O SERVICIO ("Ver más")
-// La página recibe el identificador por la URL:
-// /producto.html?id=5
+// La página recibe el identificador por la URL: /producto.html?id=5
 // ==========================================
 
 (function () {

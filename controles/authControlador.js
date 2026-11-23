@@ -8,18 +8,14 @@ const { randomUUID } = require("crypto");
 // ==========================================
 
 const iniciarSesion = async (req, res) => {
-
     const { correo, password } = req.body;
-
     // Validar campos obligatorios
     if (!correo || !password) {
         return res.status(400).json({
             mensaje: "Debes ingresar el correo y la contraseña."
         });
     }
-
     try {
-
         // Verificar que exista la clave para firmar los tokens
         if (!process.env.JWT_SECRET) {
             console.error("No está configurada la variable JWT_SECRET.");
@@ -28,7 +24,6 @@ const iniciarSesion = async (req, res) => {
                 mensaje: "Error de configuración del servidor."
             });
         }
-
         // Buscar usuario y sus roles
         const [usuarios] = await pool.execute(
             `SELECT

@@ -1,17 +1,8 @@
 const pool = require("../config/db");
 const jwt = require("jsonwebtoken");
 
-
 const registrarEmpresa = async (req, res) => {
-
-    const {
-        nit,
-        nombre,
-        descripcion,
-        direccion,
-        telefono,
-        correo
-    } = req.body;
+    const {nit, nombre, descripcion, direccion, telefono, correo} = req.body;
 
     // Validar campos obligatorios
     if (!nit || !nombre || !direccion || !telefono || !correo) {
@@ -19,7 +10,6 @@ const registrarEmpresa = async (req, res) => {
             mensaje: "Completa todos los campos obligatorios."
         });
     }
-
     // Longitudes máximas según las columnas de la tabla empresas
     if (
         nit.length > 20 ||
@@ -32,7 +22,6 @@ const registrarEmpresa = async (req, res) => {
             mensaje: "Uno o más campos superan la longitud permitida."
         });
     }
-
     // Obtener los datos del usuario autenticado
     const idUsuario = req.usuario.id_usuario;
     const identificadorToken = req.usuario.jti;
@@ -255,7 +244,6 @@ const aprobarEmpresa = async (req, res) => {
         });
     }
 };
-
 
 // Rechazar una empresa
 const rechazarEmpresa = async (req, res) => {

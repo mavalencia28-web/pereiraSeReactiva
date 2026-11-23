@@ -65,8 +65,7 @@ router.put(
 );
 
 // Consultar el detalle de una publicación (pública).
-// IMPORTANTE: va al final para que "/categorias", "/pendientes", etc.
-// no sean interpretadas como un :id.
+// IMPORTANTE: va al final para que "/categorias", "/pendientes", etc no sean interpretadas como un :id.
 router.get("/:id", obtenerPublicacionPorId);
 
 module.exports = router;

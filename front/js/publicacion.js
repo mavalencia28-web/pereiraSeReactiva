@@ -25,7 +25,6 @@ if (!token) {
 
 }
 
-
 // Mostrar cantidad solamente cuando se selecciona PRODUCTO
 tipo.addEventListener("change", function() {
 
@@ -43,7 +42,6 @@ tipo.addEventListener("change", function() {
     }
 
 });
-
 
 // Cargar categorías desde MySQL
 async function cargarCategorias() {
@@ -85,7 +83,6 @@ async function cargarCategorias() {
     }
 
 }
-
 
 // Registrar publicación
 formulario.addEventListener("submit", async function(evento) {
@@ -161,4 +158,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         return;
     }
 
+
 });
+
