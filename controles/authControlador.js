@@ -1,4 +1,3 @@
-
 const pool = require("../config/db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -205,7 +204,6 @@ const cerrarSesion = async (req, res) => {
 
 };
 
-
 // ==========================================
 // VERIFICAR SESIÓN ACTUAL
 // ==========================================
@@ -214,8 +212,7 @@ const verificarSesion = async (req, res) => {
 
     try {
 
-        // El middleware verificarToken ya comprobó
-        // que el token y la sesión sean válidos.
+        // El middleware verificarToken ya comprobó que el token y la sesión sean válidos.
 
         const idUsuario = req.usuario.id_usuario;
 
@@ -270,7 +267,6 @@ const verificarSesion = async (req, res) => {
     }
 
 };
-
 
 // ==========================================
 // EXPORTAR FUNCIONES

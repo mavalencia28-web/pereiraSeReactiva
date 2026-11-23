@@ -152,6 +152,7 @@ formulario.addEventListener("submit", async function(evento) {
     }
 
 });
+
 document.addEventListener("DOMContentLoaded", async function() {
 
     const sesionValida = await Auth.protegerPagina();
@@ -160,7 +161,4 @@ document.addEventListener("DOMContentLoaded", async function() {
         return;
     }
 
-    // Aquí continúa todo el código actual de la página
-
 });
-

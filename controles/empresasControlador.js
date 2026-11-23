@@ -175,7 +175,6 @@ const registrarEmpresa = async (req, res) => {
     }
 };
 
-
 // Consultar empresas pendientes de aprobación
 const obtenerEmpresasPendientes = async (req, res) => {
 
