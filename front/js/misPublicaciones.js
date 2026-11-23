@@ -56,7 +56,6 @@ function crearCelda(contenido) {
 
 }
 
-
 // Mostrar las publicaciones
 function mostrarPublicaciones(publicaciones) {
 
@@ -109,7 +108,6 @@ function mostrarPublicaciones(publicaciones) {
     });
 
 }
-
 
 // Consultar publicaciones del comerciante
 async function cargarPublicaciones() {

@@ -1,4 +1,3 @@
-
 const pool = require("../config/db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -9,18 +8,14 @@ const { randomUUID } = require("crypto");
 // ==========================================
 
 const iniciarSesion = async (req, res) => {
-
     const { correo, password } = req.body;
-
     // Validar campos obligatorios
     if (!correo || !password) {
         return res.status(400).json({
             mensaje: "Debes ingresar el correo y la contraseña."
         });
     }
-
     try {
-
         // Verificar que exista la clave para firmar los tokens
         if (!process.env.JWT_SECRET) {
             console.error("No está configurada la variable JWT_SECRET.");
@@ -29,7 +24,6 @@ const iniciarSesion = async (req, res) => {
                 mensaje: "Error de configuración del servidor."
             });
         }
-
         // Buscar usuario y sus roles
         const [usuarios] = await pool.execute(
             `SELECT
@@ -205,7 +199,6 @@ const cerrarSesion = async (req, res) => {
 
 };
 
-
 // ==========================================
 // VERIFICAR SESIÓN ACTUAL
 // ==========================================
@@ -214,8 +207,7 @@ const verificarSesion = async (req, res) => {
 
     try {
 
-        // El middleware verificarToken ya comprobó
-        // que el token y la sesión sean válidos.
+        // El middleware verificarToken ya comprobó que el token y la sesión sean válidos.
 
         const idUsuario = req.usuario.id_usuario;
 
@@ -270,7 +262,6 @@ const verificarSesion = async (req, res) => {
     }
 
 };
-
 
 // ==========================================
 // EXPORTAR FUNCIONES

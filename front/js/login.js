@@ -160,9 +160,6 @@ formulario.addEventListener("submit", async function(event) {
 
 window.addEventListener("pageshow", function(evento) {
 
-    // Limpiar los campos cuando la página se muestra
-    // nuevamente, incluyendo cuando se restaura desde memoria.
-
+    // Limpiar los campos cuando la página se muestra nuevamente, incluyendo cuando se restaura desde memoria.
     limpiarFormularioLogin();
-
 });

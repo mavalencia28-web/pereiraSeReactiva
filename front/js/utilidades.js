@@ -1,13 +1,4 @@
-// ==========================================
-// FUNCIONES COMPARTIDAS POR VARIAS PÁGINAS
-// ==========================================
-
 const Utilidades = {
-
-    // ======================================
-    // PRECIOS Y DINERO
-    // ======================================
-
     formatearPrecio(precio) {
 
         if (precio === null || precio === undefined || precio === "") {
@@ -33,7 +24,6 @@ const Utilidades = {
     // ======================================
     // FECHAS
     // Acepta "AAAA-MM-DD" o "AAAA-MM-DD HH:MM:SS"
-    // Se arma la fecha por partes para evitar desfases de zona horaria.
     // ======================================
 
     formatearFecha(texto) {
@@ -63,10 +53,8 @@ const Utilidades = {
 
     // ======================================
     // WHATSAPP
-    // Convierte el teléfono del comercio al formato internacional
-    // que necesita wa.me (solo dígitos, con indicativo de país).
-    // Devuelve null si no parece un celular colombiano válido
-    // (por ejemplo, un fijo no sirve para WhatsApp).
+    // Convierte el teléfono del comercio al formato internacional que necesita wa.me (solo dígitos, con indicativo de país).
+    // Devuelve null si no parece un celular colombiano válido por ejemplo, un fijo no sirve para WhatsApp).
     // ======================================
 
     normalizarTelefonoWhatsApp(telefono) {
@@ -150,5 +138,4 @@ const Utilidades = {
 
         return boton;
     }
-
 };

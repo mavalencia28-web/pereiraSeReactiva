@@ -1,10 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", async function() {
-
     // ==========================================
     // PROTEGER ACCESO AL PANEL
     // ==========================================
-
     const sesionValida = await Auth.protegerPagina();
 
     if (!sesionValida) {
@@ -32,20 +30,13 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     Campanas.cargar(document.getElementById("lista-campanas"));
 
-    // ==========================================
     // MOSTRAR SALUDO
-    // ==========================================
-
     if (saludo) {
         saludo.textContent =
             "¡Bienvenido/a, " + usuario.nombre + "!";
     }
 
-    // ==========================================
     // MOSTRAR OPCIONES SEGÚN LOS ROLES
-    // ==========================================
-
-
 const rolesUsuario = [];
 
 if (Array.isArray(usuario.roles)) {

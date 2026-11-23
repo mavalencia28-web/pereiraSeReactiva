@@ -1,7 +1,6 @@
 // ==========================================
 // CAMPAÑAS DE DONACIÓN (parte pública)
-// Se usa en la página principal y en el panel
-// de los usuarios con sesión iniciada.
+// Se usa en la página principal y en el panel de los usuarios con sesión iniciada.
 // ==========================================
 
 const Campanas = {

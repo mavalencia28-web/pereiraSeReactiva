@@ -118,8 +118,7 @@ const Auth = {
 
             console.error("Error al verificar la sesión:", error);
 
-            // Si no podemos comprobar la sesión,
-            // no permitimos mantener el acceso a la vista privada.
+            // Si no podemos comprobar la sesión, no permitimos mantener el acceso a la vista privada.
             this.limpiarSesion();
 
             return false;
@@ -168,8 +167,7 @@ const Auth = {
 
         const token = this.obtenerToken();
 
-        // Limpiar inmediatamente los datos locales
-        // para impedir que la navegación los reutilice.
+        // Limpiar inmediatamente los datos locales para impedir que la navegación los reutilice.
         this.limpiarSesion();
 
         try {
@@ -211,11 +209,6 @@ const Auth = {
     }
 
 };
-
-
-// ==========================================
-// COMPROBAR SESIÓN AL REGRESAR A UNA PÁGINA
-// ==========================================
 
 // ==========================================
 // COMPROBAR SESIÓN AL REGRESAR A UNA PÁGINA

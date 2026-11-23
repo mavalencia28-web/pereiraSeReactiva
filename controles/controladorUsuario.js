@@ -5,14 +5,14 @@ const bcrypt = require("bcrypt");
 const registrarUsuario = async (req, res) => {
     const { nombre, apellido, correo, password, telefono } = req.body;
 
-    // 1. Validar que los campos obligatorios estén completos
+    // Validar que los campos obligatorios estén completos
     if (!nombre || !apellido || !correo || !password) {
         return res.status(400).json({
             mensaje: "Nombre, apellido, correo y contraseña son obligatorios."
         });
     }
 
-    // 2. Validar formato del correo
+    // Validar formato del correo
     const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!correoValido.test(correo)) {
@@ -21,14 +21,14 @@ const registrarUsuario = async (req, res) => {
         });
     }
 
-    // 3. Validar longitud de la contraseña
+    // Validar longitud de la contraseña
     if (password.length < 8) {
         return res.status(400).json({
             mensaje: "La contraseña debe tener mínimo 8 caracteres."
         });
     }
 
-    // 4. Validar longitudes de los campos
+    // Validar longitudes de los campos
     if (
         nombre.length > 60 || apellido.length > 60 || correo.length > 120 || (telefono && telefono.length > 20)
     ) {
@@ -42,7 +42,7 @@ const registrarUsuario = async (req, res) => {
     try {
         conexion = await pool.getConnection();
 
-        // 5. Comprobar si el correo ya existe
+        // Comprobar si el correo ya existe
         const [usuariosExistentes] = await conexion.execute(
             "SELECT id_usuario FROM usuarios WHERE correo = ?",
             [correo]
@@ -54,13 +54,13 @@ const registrarUsuario = async (req, res) => {
             });
         }
 
-        // 6. Encriptar la contraseña mediante bcrypt
+        // Encriptar la contraseña mediante bcrypt
         const passwordHash = await bcrypt.hash(password, 12);
 
-        // 7. Iniciar transacción
+        // Iniciar transacción
         await conexion.beginTransaction();
 
-        // 8. Insertar el usuario
+        // Insertar el usuario
         const [resultado] = await conexion.execute(
             `INSERT INTO usuarios
             (nombre, apellido, correo, password_hash, telefono)
@@ -70,7 +70,7 @@ const registrarUsuario = async (req, res) => {
 
         const idUsuario = resultado.insertId;
 
-        // 9. Consultar el rol COMPRADOR
+        // Consultar el rol COMPRADOR
         const [roles] = await conexion.execute(
             "SELECT id_rol FROM roles WHERE nombre = ?",
             ["COMPRADOR"]
@@ -80,14 +80,14 @@ const registrarUsuario = async (req, res) => {
             throw new Error("No existe el rol COMPRADOR en la base de datos.");
         }
 
-        // 10. Asignar el rol al usuario
+        // Asignar el rol al usuario
         await conexion.execute(
             `INSERT INTO usuarios_roles (id_usuario, id_rol)
              VALUES (?, ?)`,
             [idUsuario, roles[0].id_rol]
         );
 
-        // 11. Confirmar los cambios
+        // Confirmar los cambios
         await conexion.commit();
 
         return res.status(201).json({
