@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar publicación - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="encabezado">
+        <a href="/" class="logo">Pereira se Reactiva</a>
+
+        <nav>
+            <a href="/panel.html">Mi panel</a>
+            <a href="/">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="formulario-contenedor">
+
+        <h1>Registrar producto o servicio</h1>
+
+        <p>
+            Comparte lo que ofrece tu negocio y ayuda a reactivar
+            la economía de Pereira.
+        </p>
+
+        <form id="formPublicacion">
+
+            <label for="tipo">Tipo de publicación *</label>
+            <select id="tipo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="PRODUCTO">Producto</option>
+                <option value="SERVICIO">Servicio</option>
+            </select>
+
+            <label for="categoria">Categoría *</label>
+            <select id="categoria" required>
+                <option value="">Cargando categorías...</option>
+            </select>
+
+            <label for="nombre">Nombre *</label>
+            <input
+                type="text"
+                id="nombre"
+                maxlength="100"
+                placeholder="Nombre del producto o servicio"
+                required
+            >
+
+            <label for="descripcion">Descripción *</label>
+            <textarea
+                id="descripcion"
+                rows="4"
+                maxlength="1000"
+                placeholder="Describe lo que ofreces"
+                required
+            ></textarea>
+
+            <label for="precio">Precio</label>
+            <input
+                type="number"
+                id="precio"
+                min="0"
+                step="0.01"
+                placeholder="Deja vacío si el precio es por consultar"
+            >
+
+            <div id="contenedorCantidad" style="display: none;">
+                <label for="cantidad">Cantidad disponible *</label>
+                <input
+                    type="number"
+                    id="cantidad"
+                    min="0"
+                    step="1"
+                    placeholder="Ejemplo: 10"
+                >
+            </div>
+
+            <button type="submit" class="btn-principal" id="btnPublicar">
+                Registrar publicación
+            </button>
+
+        </form>
+
+        <p id="mensaje" role="status"></p>
+
+    </main>
+
+    <footer>
+        <p>Pereira se Reactiva - Apoyando nuestra economía</p>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/publicacion.js"></script>
+
+</body>
+</html>

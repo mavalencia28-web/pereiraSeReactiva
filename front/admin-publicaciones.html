@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar publicaciones | Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="encabezado">
+        <div class="logo">
+            Pereira se Reactiva
+        </div>
+
+        <nav>
+            <a href="/panel.html">Mi panel</a>
+            <button id="btnCerrarSesion" class="btn-cerrar-sesion">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main class="publicaciones-contenedor">
+
+        <div class="publicaciones-encabezado">
+            <h1>Administrar publicaciones</h1>
+            <p>Revisa y gestiona los productos y servicios registrados por los comercios.</p>
+        </div>
+
+        <p id="mensajeAdmin">Cargando publicaciones pendientes...</p>
+
+        <div class="tabla-contenedor">
+            <table class="tabla-publicaciones">
+                <thead>
+                    <tr>
+                        <th>Publicación</th>
+                        <th>Empresa</th>
+                        <th>Categoría</th>
+                        <th>Tipo</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaPendientes"></tbody>
+            </table>
+        </div>
+
+        <a href="/panel.html" class="enlace-volver">
+            Volver al panel
+        </a>
+
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/adminPublicaciones.js"></script>
+
+</body>
+</html>

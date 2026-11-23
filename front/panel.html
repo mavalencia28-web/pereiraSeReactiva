@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi panel - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="encabezado">
+    <a href="/" class="logo">Pereira se Reactiva</a>
+        <nav>
+            <a href="/">Inicio</a>
+
+            <button type="button" id="btnCerrarSesion" class="btn-cerrar-sesion">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main class="panel-contenedor">
+        <section class="panel-bienvenida">
+            <h2>Mi panel de usuario</h2>
+            <p id="saludo">Cargando información...</p>
+        </section>
+        <section class="panel-campanas">
+            <h3>Campañas de donación activas</h3>
+            <div id="lista-campanas" class="campanas-grid">
+                <p>Cargando campañas...</p>
+            </div>
+        </section>
+
+        <h3>¿Qué deseas hacer?</h3>
+        <section class="panel-opciones">
+        <!-- OPCIONES PARA COMERCIANTES -->
+        <article class="panel-tarjeta" data-roles="COMPRADOR, COMERCIANTE">
+            <h4>Registrar mi empresa</h4>
+            <p>
+                Registra tu negocio para publicar tus productos
+                o servicios y apoyar la reactivación económica.
+            </p>
+            <a href="/empresa.html">Registrar empresa</a>
+        </article>
+
+        <article class="panel-tarjeta" data-roles="COMERCIANTE">
+            <h4>Publicar productos y servicios</h4>
+            <p>
+                Registra los productos o servicios de tu negocio
+                para que las personas puedan conocerlos.
+            </p>
+            <a href="/publicacion.html">Crear publicación</a>
+        </article>
+
+        <article class="panel-tarjeta" data-roles="COMERCIANTE">
+            <h4>Mis publicaciones</h4>
+            <p>
+                Consulta tus productos y servicios registrados
+                y revisa el estado de aprobación.
+            </p>
+            <a href="/mis-publicaciones.html">Ver mis publicaciones</a>
+        </article>
+
+        <!-- OPCIÓN PARA TODOS LOS USUARIOS -->
+        <article class="panel-tarjeta" data-roles="COMPRADOR, COMERCIANTE, DONANTE, ADMINISTRADOR">
+            <h4>Donar</h4>
+            <p>
+                Apoya una campaña con una donación económica o en especie
+                y consulta el estado de tus donaciones.
+            </p>
+            <a href="/donar.html">Ir a donaciones</a>
+        </article>
+
+        <!-- OPCIONES EXCLUSIVAS PARA ADMINISTRADOR -->
+
+        <article class="panel-tarjeta" data-roles="ADMINISTRADOR">
+            <h4>Administrar campañas</h4>
+            <p>
+                Crea, edita, activa, finaliza o elimina las campañas de donación.
+            </p>
+            <a href="/admin-campanas.html">Administrar campañas</a>
+        </article>
+
+        <article class="panel-tarjeta" data-roles="ADMINISTRADOR">
+            <h4>Gestionar donaciones</h4>
+            <p>
+                Revisa las donaciones recibidas, confírmalas y márcalas
+                como entregadas donde exista la necesidad real.
+            </p>
+            <a href="/admin-donaciones.html">Gestionar donaciones</a>
+        </article>
+
+        <article class="panel-tarjeta" data-roles="ADMINISTRADOR">
+            <h4>Administrar publicaciones</h4>
+            <p>
+                Revisa, aprueba o rechaza los productos y servicios registrados.
+            </p>
+            <a href="/admin-publicaciones.html">
+                Administrar publicaciones
+            </a>
+        </article>
+
+        <article class="panel-tarjeta" data-roles="ADMINISTRADOR">
+            <h4>Administrar empresas</h4>
+            <p>
+                Revisa las solicitudes de registro de comercios,
+                verifica su información y aprueba o rechaza su registro.
+            </p>
+            <a href="/admin-empresas.html">Administrar empresas</a>
+        </article>
+
+    </section>
+    </main>
+    <footer>
+        <p>Pereira se Reactiva - Apoyando nuestra economía</p>
+    </footer>
+    
+    <script src="/js/auth.js"></script>
+    <script src="/js/utilidades.js"></script>
+    <script src="/js/campanas.js"></script>
+    <script src="/js/panel.js"></script>
+</body>
+</html>

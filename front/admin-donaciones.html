@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar donaciones - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="admin-encabezado">
+        <div>
+            <h1>Gestión de donaciones</h1>
+            <p>Estas donaciones llegan únicamente al administrador para destinarlas donde exista la necesidad real.</p>
+        </div>
+
+        <button id="btnCerrarSesion" class="btn-cerrar-sesion">
+            Cerrar sesión
+        </button>
+    </header>
+
+    <main class="admin-contenedor">
+
+        <nav class="admin-navegacion">
+            <a href="/panel.html">Volver al panel</a>
+            <a href="/admin-campanas.html">Administrar campañas</a>
+            <a href="/admin-empresas.html">Administrar empresas</a>
+            <a href="/admin-publicaciones.html">Administrar publicaciones</a>
+        </nav>
+
+        <section class="admin-seccion">
+
+            <div class="admin-titulo">
+                <h2>Donaciones recibidas</h2>
+                <p>Contacta al donante, confirma que recibiste el aporte y márcalo como entregado cuando llegue a quien lo necesita.</p>
+            </div>
+
+            <div class="barra-filtro">
+                <label for="filtroEstado">Mostrar:</label>
+                <select id="filtroEstado">
+                    <option value="">Todas</option>
+                    <option value="PENDIENTE">Pendientes</option>
+                    <option value="CONFIRMADA">Confirmadas</option>
+                    <option value="ENTREGADA">Entregadas</option>
+                    <option value="RECHAZADA">Rechazadas</option>
+                </select>
+            </div>
+
+            <div id="mensajeAdmin" class="mensaje-admin" role="status"></div>
+
+            <div class="tabla-contenedor tabla-admin">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Campaña</th>
+                            <th>Donante</th>
+                            <th>Contacto</th>
+                            <th>Tipo</th>
+                            <th>Aporte</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaDonaciones">
+                        <tr><td colspan="8">Cargando donaciones...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/utilidades.js"></script>
+    <script src="/js/adminDonaciones.js"></script>
+</body>
+</html>

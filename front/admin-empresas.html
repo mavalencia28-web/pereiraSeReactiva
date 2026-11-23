@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar empresas - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+
+</head>
+<body data-protegida="true">
+
+    <header class="admin-encabezado">
+        <div>
+            <h1>Administración de empresas</h1>
+            <p>Revisa y gestiona las solicitudes de registro de comercios.</p>
+        </div>
+
+        <button id="btnCerrarSesion" class="btn-cerrar-sesion">
+            Cerrar sesión
+        </button>
+    </header>
+
+    <main class="admin-contenedor">
+
+        <nav class="admin-navegacion">
+            <a href="/panel.html">Volver al panel</a>
+            <a href="/admin-publicaciones.html">Administrar publicaciones</a>
+            <a href="/admin-campanas.html">Administrar campañas</a>
+            <a href="/admin-donaciones.html">Gestionar donaciones</a>
+        </nav>
+
+        <section class="admin-seccion">
+            <div class="admin-titulo">
+                <h2>Empresas pendientes de aprobación</h2>
+                <p>Verifica la información de cada comercio antes de aprobar o rechazar su solicitud.</p>
+            </div>
+
+            <div id="mensajeAdmin" class="mensaje-admin"></div>
+
+            <div class="tabla-contenedor tabla-admin">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>NIT</th>
+                            <th>Comerciante</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaEmpresas">
+                        <tr>
+                            <td colspan="8">Cargando empresas...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/adminEmpresas.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar campañas - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="admin-encabezado">
+        <div>
+            <h1>Administración de campañas</h1>
+            <p>Crea, edita y gestiona las campañas de donación de la plataforma.</p>
+        </div>
+
+        <button id="btnCerrarSesion" class="btn-cerrar-sesion">
+            Cerrar sesión
+        </button>
+    </header>
+
+    <main class="admin-contenedor">
+
+        <nav class="admin-navegacion">
+            <a href="/panel.html">Volver al panel</a>
+            <a href="/admin-donaciones.html">Gestionar donaciones</a>
+            <a href="/admin-empresas.html">Administrar empresas</a>
+            <a href="/admin-publicaciones.html">Administrar publicaciones</a>
+        </nav>
+
+        <section class="admin-seccion">
+
+            <div class="admin-titulo">
+                <h2 id="tituloFormulario">Nueva campaña</h2>
+                <p>Las campañas activas se muestran en la página principal y en el panel de los usuarios.</p>
+            </div>
+
+            <form id="formCampana" class="form-admin">
+
+                <div class="campo campo-ancho">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" maxlength="120" required>
+                </div>
+
+                <div class="campo campo-ancho">
+                    <label for="descripcion">Descripción *</label>
+                    <textarea id="descripcion" rows="4" maxlength="3000" required></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="tipoAceptacion">Tipo de donación que acepta *</label>
+                    <select id="tipoAceptacion" required>
+                        <option value="AMBAS">Económica y en especie</option>
+                        <option value="ECONOMICA">Solo económica</option>
+                        <option value="ESPECIE">Solo en especie</option>
+                    </select>
+                </div>
+
+                <div class="campo" id="campoMeta">
+                    <label for="metaEconomica">Meta económica (COP)</label>
+                    <input type="number" id="metaEconomica" min="1" step="1" placeholder="Opcional">
+                </div>
+
+                <div class="campo">
+                    <label for="fechaInicio">Fecha de inicio *</label>
+                    <input type="date" id="fechaInicio" required>
+                </div>
+
+                <div class="campo">
+                    <label for="fechaFin">Fecha de finalización *</label>
+                    <input type="date" id="fechaFin" required>
+                </div>
+
+                <div class="campo campo-ancho acciones-form">
+                    <button type="submit" class="btn-principal" id="btnGuardar">Crear campaña</button>
+                    <button type="button" class="btn-secundario" id="btnCancelarEdicion" hidden>Cancelar edición</button>
+                </div>
+
+            </form>
+
+            <p id="mensajeFormulario" class="mensaje-admin" role="status"></p>
+
+        </section>
+
+        <section class="admin-seccion seccion-separada">
+
+            <div class="admin-titulo">
+                <h2>Campañas registradas</h2>
+            </div>
+
+            <div id="mensajeAdmin" class="mensaje-admin" role="status"></div>
+
+            <div class="tabla-contenedor tabla-admin">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Campaña</th>
+                            <th>Acepta</th>
+                            <th>Meta</th>
+                            <th>Recaudado</th>
+                            <th>Vigencia</th>
+                            <th>Donaciones</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaCampanas">
+                        <tr><td colspan="8">Cargando campañas...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/utilidades.js"></script>
+    <script src="/js/adminCampanas.js"></script>
+</body>
+</html>

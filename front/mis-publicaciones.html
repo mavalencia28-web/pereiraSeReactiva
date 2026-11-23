@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis publicaciones - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="encabezado">
+        <a href="/" class="logo">Pereira se Reactiva</a>
+
+        <nav>
+            <a href="/panel.html">Mi panel</a>
+            <a href="/">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="publicaciones-contenedor">
+
+        <section class="publicaciones-encabezado">
+            <h1>Mis publicaciones</h1>
+            <p>
+                Consulta los productos y servicios que has registrado
+                en Pereira se Reactiva.
+            </p>
+
+            <a href="/publicacion.html" class="btn-principal">
+                Crear publicación
+            </a>
+        </section>
+
+        <p id="mensajePublicaciones" role="status">
+            Cargando publicaciones...
+        </p>
+
+        <div class="tabla-contenedor">
+            <table class="tabla-publicaciones">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaPublicaciones">
+                </tbody>
+            </table>
+        </div>
+
+        <a href="/panel.html" class="enlace-volver">
+            Volver a mi panel
+        </a>
+
+    </main>
+
+    <footer>
+        <p>Pereira se Reactiva - Apoyando nuestra economía</p>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/misPublicaciones.js"></script>
+
+</body>
+</html>

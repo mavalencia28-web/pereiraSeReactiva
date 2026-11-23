@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pereira se Reactiva</title>
+
+    <link rel="stylesheet" href="/css/estilos.css">
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <a href="/" class="logo">Pereira se Reactiva</a>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#publicaciones">Productos y servicios</a>
+            <a href="#donaciones">Donaciones</a>
+            <a href="/empresa.html">Registra tu comercio</a>
+        </nav>
+
+    <div class="acceso" id="opcionesAcceso">
+        <!-- JavaScript mostrará aquí las opciones según la sesión -->
+    </div>
+
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-contenido">
+                <span class="etiqueta">Juntos reconstruimos nuestra economía</span>
+
+                <h1>¡Pereira se reactiva!</h1>
+
+                <p>
+                    Apoya a los comercios afectados, descubre sus productos
+                    y servicios y contribuye a la recuperación de nuestra ciudad.
+                </p>
+
+                <a href="#publicaciones" class="btn-principal">
+                    Explorar comercios
+                </a>
+            </div>
+        </section>
+
+        <section class="categorias" id="categorias">
+            <h2>Descubre nuestras categorías</h2>
+            <p>Encuentra productos y servicios de los comercios locales.</p>
+
+            <div class="categorias-lista">
+                <div class="categoria">Alimentos</div>
+                <div class="categoria">Ropa y accesorios</div>
+                <div class="categoria">Hogar</div>
+                <div class="categoria">Servicios</div>
+            </div>
+        </section>
+
+        <section class="publicaciones" id="publicaciones">
+            <h2>Productos y servicios destacados</h2>
+
+            <p>Conoce lo que ofrecen nuestros comercios.</p>
+
+            <div id="lista-publicaciones" class="productos-grid">
+                <p>Cargando publicaciones...</p>
+            </div>
+        </section>
+
+        <section class="donaciones" id="donaciones">
+            <h2>¡También puedes ayudar!</h2>
+
+            <p>
+                Contribuye a la recuperación de nuestra comunidad
+                mediante donaciones económicas o en especie.
+                Las donaciones llegan al administrador de la plataforma,
+                quien las destina donde exista la necesidad real.
+            </p>
+
+            <div id="lista-campanas" class="campanas-grid">
+                <p>Cargando campañas...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Pereira se Reactiva. Apoyemos el comercio local.</p>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/utilidades.js"></script>
+    <script src="/js/campanas.js"></script>
+    <script src="/js/inicio.js" defer></script>
+</body>
+</html>

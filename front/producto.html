@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del producto - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="/" class="logo">Pereira se Reactiva</a>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/#publicaciones">Productos y servicios</a>
+            <a href="/#donaciones">Donaciones</a>
+        </nav>
+    </header>
+
+    <main class="detalle-contenedor">
+
+        <p id="mensajeDetalle" role="status">Cargando información...</p>
+
+        <article id="detalleProducto" class="detalle-tarjeta" hidden>
+
+            <div class="detalle-etiquetas">
+                <span id="detalleTipo" class="etiqueta-detalle"></span>
+                <span id="detalleCategoria" class="etiqueta-detalle"></span>
+            </div>
+
+            <h1 id="detalleNombre"></h1>
+
+            <p id="detallePrecio" class="detalle-precio"></p>
+            <p id="detalleDisponibilidad" class="detalle-dato"></p>
+
+            <h2>Descripción</h2>
+            <p id="detalleDescripcion" class="detalle-texto"></p>
+
+            <h2>Información del comercio</h2>
+            <p id="detalleEmpresa" class="detalle-dato"></p>
+            <p id="detalleDescripcionEmpresa" class="detalle-texto"></p>
+            <p id="detalleDireccion" class="detalle-dato"></p>
+            <p id="detalleTelefono" class="detalle-dato"></p>
+
+            <div id="detalleAcciones" class="detalle-acciones"></div>
+
+        </article>
+
+        <a href="/#publicaciones" class="enlace-volver">Volver a los productos</a>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Pereira se Reactiva. Apoyemos el comercio local.</p>
+    </footer>
+
+    <script src="/js/utilidades.js"></script>
+    <script src="/js/producto.js"></script>
+</body>
+</html>

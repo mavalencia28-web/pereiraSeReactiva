@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donar - Pereira se Reactiva</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-protegida="true">
+
+    <header class="encabezado">
+        <a href="/" class="logo">Pereira se Reactiva</a>
+
+        <nav>
+            <a href="/panel.html">Mi panel</a>
+            <a href="/">Inicio</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="formulario-contenedor">
+
+            <h1>Realizar una donación</h1>
+
+            <p>
+                Elige una campaña y cuéntanos qué quieres aportar. Tu donación
+                llegará únicamente al administrador de la plataforma, quien se
+                pondrá en contacto contigo para coordinarla y destinarla donde
+                exista la necesidad real.
+            </p>
+
+            <form id="formDonacion">
+
+                <label for="campana">Campaña *</label>
+                <select id="campana" required>
+                    <option value="">Cargando campañas...</option>
+                </select>
+
+                <p id="descripcionCampana" class="campana-dato"></p>
+
+                <label for="tipoDonacion">¿Qué deseas donar? *</label>
+                <select id="tipoDonacion" required></select>
+
+                <div id="bloqueMonto" hidden>
+                    <label for="monto">Monto en pesos colombianos *</label>
+                    <input type="number" id="monto" min="1" step="1" placeholder="Ejemplo: 50000">
+                </div>
+
+                <div id="bloqueEspecie" hidden>
+                    <label for="descripcionEspecie">Describe lo que donarás *</label>
+                    <textarea
+                        id="descripcionEspecie"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="Ejemplo: 20 mercados, 15 cobijas..."
+                    ></textarea>
+                </div>
+
+                <label for="tipoDonante">Donas como *</label>
+                <select id="tipoDonante" required>
+                    <option value="PERSONA">Persona</option>
+                    <option value="EMPRESA">Empresa</option>
+                </select>
+
+                <label for="nombreDonante">Nombre del donante</label>
+                <input
+                    type="text"
+                    id="nombreDonante"
+                    maxlength="120"
+                    placeholder="Si lo dejas vacío usaremos el nombre de tu cuenta"
+                >
+
+                <div id="bloqueNit" hidden>
+                    <label for="nitDonante">NIT de la empresa *</label>
+                    <input type="text" id="nitDonante" maxlength="20">
+                </div>
+
+                <button type="submit" class="btn-principal" id="btnDonar">
+                    Registrar donación
+                </button>
+
+            </form>
+
+            <p id="mensaje" role="status"></p>
+
+        </section>
+
+        <section class="publicaciones-contenedor">
+
+            <div class="publicaciones-encabezado">
+                <h1>Mis donaciones</h1>
+                <p>Consulta el estado de las donaciones que has registrado.</p>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table class="tabla-publicaciones">
+                    <thead>
+                        <tr>
+                            <th>Campaña</th>
+                            <th>Tipo</th>
+                            <th>Aporte</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaMisDonaciones">
+                        <tr><td colspan="5">Cargando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="/panel.html" class="enlace-volver">Volver a mi panel</a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Pereira se Reactiva - Apoyando nuestra economía</p>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/utilidades.js"></script>
+    <script src="/js/donar.js"></script>
+</body>
+</html>

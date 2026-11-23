@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar comercio | Pereira se Reactiva</title>
+
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <a href="/" class="logo">Pereira se Reactiva</a>
+
+    <nav id="opcionesAccesoEmpresa">
+        <a href="/">Inicio</a>
+    </nav>
+    </header>
+
+    <main class="formulario-contenedor">
+
+        <h1>Registra tu comercio</h1>
+
+        <p>
+            Ayúdanos a conocer tu negocio para formar parte
+            de la reactivación económica de Pereira.
+        </p>
+
+        <!-- Aviso para usuarios sin sesión -->
+        <section id="avisoSesion" hidden>
+
+            <h2>Antes de registrar tu comercio</h2>
+
+            <p>
+                Primero necesitas crear una cuenta e iniciar sesión
+                en Pereira se Reactiva.
+            </p>
+
+            <p>
+                Si todavía no tienes una cuenta, regístrate.
+                Si ya tienes una, inicia sesión para continuar.
+            </p>
+
+            <a href="/registro.html" class="btn-principal">
+                Crear mi cuenta
+            </a>
+
+            <a href="/login.html" class="btn-principal">
+                Iniciar sesión
+            </a>
+
+        </section>
+
+        <!-- Formulario para usuarios autenticados -->
+        <form id="formEmpresa" hidden>
+
+            <label for="nit">NIT del comercio *</label>
+            <input type="text" id="nit" name="nit" maxlength="20" required>
+
+            <label for="nombre">Nombre del comercio *</label>
+            <input type="text" id="nombre" name="nombre" maxlength="120" required>
+
+            <label for="descripcion">Descripción del comercio</label>
+            <textarea id="descripcion" name="descripcion" rows="4" maxlength="1000"></textarea>
+
+            <label for="direccion">Dirección *</label>
+            <input type="text" id="direccion" name="direccion" maxlength="200" required>
+
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" maxlength="20" required>
+
+            <label for="correo">Correo electrónico del comercio *</label>
+            <input type="email" id="correo" name="correo" maxlength="120" required>
+
+            <button type="submit" class="btn-principal">
+                Registrar comercio
+            </button>
+
+        </form>
+
+        <p id="mensaje"></p>
+
+    </main>
+
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/empresa.js" defer></script>
+</body>
+</html>
